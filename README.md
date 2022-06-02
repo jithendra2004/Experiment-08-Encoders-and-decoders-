@@ -56,23 +56,64 @@ D7 = X Y Z
 
 ### Procedure
 /* write all the steps invloved */
+Step 1:
+Open Quartus II and select new project and choose the file location.
 
+Step 2:
+Module Declaration. Module should have the file name.
+
+Step 3:
+Input-Output Delecaration.
+
+Step 4:
+Use assign to define the functionality of logic circuits.
+
+Step 5:
+At the end give endmodule.
+
+Step 6:
+Run the program and choose RTL viewer to get RTL realization.
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: V.A.Jithendra
+RegisterNumber:212221230043 
 */
-
-
-
+### Encoders 
+~~~
+module encode(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+~~~
+### Decoders
+~~~
+module decode(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0=(~a & ~b & ~c) ;
+assign d1=(~a & ~b &c);
+assign d2=(~a & b &~c);
+assign d3=(~a & b &c);
+assign d4=(a &~b&~c);
+assign d5=(a &~b&c);
+assign d6=(a&b&~c);
+assign d7=(a&b&c);
+endmodule
+~~~
 
 
 
 ### RTL LOGIC  
-
+### Encoder:
+![image](https://user-images.githubusercontent.com/94226297/171607255-b0ddb1f6-b2ab-4748-a746-df7286145f9d.png)
+### decoder:
+![image](https://user-images.githubusercontent.com/94226297/171607362-a3104cd7-1ad7-48bd-ab11-20ab1e57ba11.png)
 
 
 
@@ -81,12 +122,23 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+### Encoder
+![encode timing](https://user-images.githubusercontent.com/94226297/171608118-6637d4aa-2e46-48d6-bb9d-53b2d029f197.png)
 
+### Decoder
 
-
+![decoder timing](https://user-images.githubusercontent.com/94226297/171607869-f619ec2c-6923-4e96-8e18-f806cb34908f.png)
 
 
 ### TRUTH TABLE 
+### Encoder
+
+![en3](https://user-images.githubusercontent.com/94226297/171607642-250e8f6e-a47e-4173-95f0-666d85ef39c2.png)
+
+
+
+### decoder
+![de3](https://user-images.githubusercontent.com/94226297/171607596-216c457f-4d75-464f-8872-ec2cb3326e5d.png)
 
 
 
@@ -94,3 +146,5 @@ RegisterNumber:
 
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is done.
+
